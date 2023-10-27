@@ -7,9 +7,8 @@
     </div>
     <div class="flex items-center justify-center gap-8">
       <a
-        href="https://cachethq.io/?ref=artisan.page"
+        href="javascript:;"
         title="Cachet — The Open-Source Status Page System"
-        @click="sponsorClick"
         target="_blank"
         class="font-bold text-artisan hover:text-artisan-light"
       >
@@ -20,9 +19,8 @@
         />
       </a>
       <a
-        href="https://checkmango.com/?ref=artisan.page"
+        href="javascript:;"
         title="Checkmango — The Full-Stack A/B Testing Platform"
-        @click="sponsorClick"
         target="_blank"
         class="font-bold text-artisan hover:text-artisan-light"
       >
@@ -37,13 +35,5 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    sponsorClick() {
-      if (typeof window.fathom !== 'undefined') {
-        window.fathom.trackGoal('L3DZXKHP', 0)
-      }
-    },
-  },
-}
+export default {};
 </script>
