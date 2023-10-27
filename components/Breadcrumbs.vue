@@ -50,7 +50,7 @@ defineProps({
         <a
           href="https://twitter.com/david_nguyen94"
           class="text-artisan hover:text-artisan-light hidden md:block"
-          title="Follow @jbrooksuk on Twitter"
+          title="Follow @david_nguyen94 on Twitter"
         >
           <TwitterIcon class="h-6 w-6 fill-current" />
         </a>

@@ -12,15 +12,15 @@ useSeoMeta({
 
   ogDescription: () =>
     `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
-  ogImage: 'https://artisan.page/og.png',
+  ogImage: 'https://artisan.eplus.dev/og.png',
   ogTitle: 'Laravel Artisan Cheatsheet',
   ogType: 'website',
 
-  twitterCreator: '@jbrooksuk',
+  twitterCreator: '@david_nguyen94',
   twitterDescription: () =>
     `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
-  twitterSite: '@jbrooksuk',
-  twitterImage: 'https://artisan.page/og.png',
+  twitterSite: '@david_nguyen94',
+  twitterImage: 'https://artisan.eplus.dev/og.png',
   twitterTitle: 'Laravel Artisan Cheatsheet',
   twitterCard: 'summary_large_image',
 })
