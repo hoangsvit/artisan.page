@@ -9,7 +9,6 @@
       <a
         href="javascript:;"
         title="Cachet — The Open-Source Status Page System"
-        target="_blank"
         class="font-bold text-artisan hover:text-artisan-light"
       >
         <img src="~/assets/sponsors/cachet.svg" class="h-8 dark:hidden" />
@@ -21,7 +20,6 @@
       <a
         href="javascript:;"
         title="Checkmango — The Full-Stack A/B Testing Platform"
-        target="_blank"
         class="font-bold text-artisan hover:text-artisan-light"
       >
         <img src="~/assets/sponsors/checkmango.svg" class="h-8 dark:hidden" />
