@@ -32,8 +32,6 @@ useHead({
       class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
     >
       <Command :command="command" :version="commandVersion" />
-
-      <Carbon />
     </div>
 
     <AppFooter />

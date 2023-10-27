@@ -48,7 +48,7 @@ defineProps({
     <div class="flex items-center gap-4">
       <div class="gap-4 flex">
         <a
-          href="https://x.com/jbrooksuk"
+          href="https://twitter.com/david_nguyen94"
           class="text-artisan hover:text-artisan-light hidden md:block"
           title="Follow @jbrooksuk on Twitter"
         >
@@ -56,7 +56,7 @@ defineProps({
         </a>
 
         <a
-          href="https://github.com/jbrooksuk/artisan.page"
+          href="https://github.com/hoangsvit/artisan.page"
           class="text-artisan hover:text-artisan-light hidden md:block"
           title="Star on GitHub"
         >
