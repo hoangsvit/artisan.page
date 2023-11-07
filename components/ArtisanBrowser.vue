@@ -8,15 +8,15 @@
 
     <main>
       <div class="flex my-4">
-        <div class="hidden md:block md:w-1/4 pr-4 space-y-4">
-          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">
+        <div class="hidden sticky top-0 overflow-y-auto h-screen md:block md:w-1/4 pr-4 space-y-4 scroll-mr-2 snap-y snap-start">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500 snap-start">
             Commands
             <span class="text-xs text-gray-500 dark:text-gray-200">
               ({{ commandData.length }})
             </span>
           </h2>
 
-          <div v-for="(group, groupName) in commandLinks" :key="groupName">
+          <div v-for="(group, groupName) in commandLinks" :key="groupName" class="snap-start">
             <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-500">
               {{ groupName }}
               <span
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="w-full">
+        <div class="w-full pr-0 md:pl-8">
           <div class="space-y-8">
             <div v-if="!commandData.length">
               <div
@@ -88,7 +88,8 @@
 </template>
 
 <script>
-import manifest from '../manifest.json'
+import { laravel } from '../manifest.json'
+import { groupBy } from 'lodash'
 
 export default {
   props: {
@@ -99,14 +100,13 @@ export default {
   data() {
     return {
       showBackToTop: false,
-      manifest: manifest,
       currentVersion: null,
       commandData: [],
       filter: '',
     }
   },
   created() {
-    this.currentVersion = this.version || manifest['laravel'][0]
+    this.currentVersion = this.version || laravel[0]
     this.loadData(this.currentVersion)
   },
   mounted() {
@@ -133,7 +133,7 @@ export default {
         return Object.values(this.commandLinks).flat()
       }
 
-      return this.commandData.filter(command => {
+      return this.commandData.filter((command) => {
         if (
           command.name.toLowerCase().includes(keyword) ||
           command.synopsis.toLowerCase().includes(keyword) ||
@@ -144,31 +144,21 @@ export default {
       })
     },
     commandLinks() {
-      let commandLinks = {}
-
-      this.commandData.forEach(command => {
-        const groupName = command.name.includes(':')
-          ? command.name.split(':')[0]
-          : ''
-
-        if (commandLinks[groupName] === undefined) {
-          commandLinks[groupName] = []
-        }
-
-        commandLinks[groupName].push(command)
-      })
-
       // Sort the commands into alphabetical order so that we can
       // display the 'ungrouped' commands at the top of the list.
       return Object.fromEntries(
-        Object.entries(commandLinks).sort((a, b) => a[0] > b[0])
+        Object.entries(groupBy(this.commandData, (command) => {
+          return command.name.includes(':')
+            ? command.name.split(':')[0]
+            : ''
+        })).sort((a, b) => a[0] > b[0])
       )
     },
   },
   methods: {
     async loadData(version) {
-      const commandData = await import(`../assets/${version}.json`)
-      this.commandData = commandData.default
+      const commands = await import(`../assets/${version}.json`)
+      this.commandData = commands.default
     },
     handleScroll() {
       const rootElement = document.documentElement

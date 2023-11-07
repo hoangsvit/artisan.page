@@ -1,14 +1,13 @@
 <script setup>
-import manifest from '../manifest.json'
+import { laravel } from '../manifest.json'
 
 useHead({
-  title: manifest.laravel[0],
+  title: laravel[0],
 })
 
 useSeoMeta({
   title: 'Laravel Artisan Cheatsheet',
-  description: () =>
-    `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
+  description: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
 
   ogDescription: () =>
     `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
