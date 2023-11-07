@@ -1,8 +1,9 @@
-const laravelManifest = require('./manifest').laravel
+import { laravel } from './manifest'
 
 export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  ssr: true,
 
   site: {
     url: 'https://artisan.page',
@@ -37,9 +38,9 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
+      'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {},
-      'tailwindcss/nesting': {},
     },
   },
 
@@ -65,30 +66,22 @@ export default defineNuxtConfig({
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  generate: {
-    async routes() {
-      return laravelManifest.map(version => ({
-        route: `/${version}/`,
-        payload: {
-          version: version,
-        },
-      }))
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: true,
+      routes: laravel.flatMap((version) => `/${version}/`).concat(
+          laravel.flatMap((version) => {
+            const commands = require(`./assets/${version}.json`)
+
+            return commands.map((command) => `/${version}/${command.name.replace(':', '')}`)
+          }),
+      ),
     },
   },
 
   router: {
     trailingSlash: true,
-  },
-
-  sitemap: {
-    urls: async () => {
-      return laravelManifest.map(version => ({
-        url: `/${version}/`,
-        changefreq: 'weekly',
-        priority: 1,
-        lastmodISO: new Date().toISOString(),
-      }))
-    },
   },
 
   colorMode: {

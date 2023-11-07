@@ -1,6 +1,7 @@
 <script setup>
-const commandName = useRoute().params.command
-const commandVersion = useRoute().params.version
+const route = useRoute()
+const commandName = route.params.command
+const commandVersion = route.params.version
 const commandData = await import(`../../assets/${commandVersion}.json`)
 const command = commandData.default.filter(
   command => command.name.replace(':', '') === commandName
@@ -17,6 +18,20 @@ const pages = computed(() => [
 useHead({
   title: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
   titleTemplate: null,
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://artisan.page${route.path}`,
+    },
+  ],
+})
+
+useSeoMeta({
+  description: `php artisan ${command.name} - ${command.description}`,
+  ogTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
+  ogDescription: `php artisan ${command.name} - ${command.description}`,
+  twitterTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
+  twitterDescription: `php artisan ${command.name} - ${command.description}`,
 })
 </script>
 
