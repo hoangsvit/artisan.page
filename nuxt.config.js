@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      titleTemplate: 'Laravel v%s - Laravel Artisan Cheatsheet',
+      titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
       link: [
         {
           rel: 'icon',
@@ -59,22 +59,11 @@ export default defineNuxtConfig({
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      failOnError: true,
-      routes: laravel.flatMap((version) => `/${version}/`).concat(
-          laravel.flatMap((version) => {
-            const commands = require(`./assets/${version}.json`)
-
-            return commands.map((command) => `/${version}/${command.name.replace(':', '')}`)
-          }),
-      ),
-    },
-  },
-
-  router: {
-    trailingSlash: true,
+  sitemap: {
+    cacheMaxAgeSeconds: 360, // 1 hour
+    sources: [
+      '/api/__sitemap__/urls'
+    ]
   },
 
   colorMode: {

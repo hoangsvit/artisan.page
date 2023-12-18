@@ -8,9 +8,8 @@ useHead({
 defineRobotMeta()
 
 useSeoMeta({
-  title: 'Laravel Artisan Cheatsheet',
+  title: 'The Laravel Artisan Cheatsheet',
   description: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
-
   ogDescription: () =>
     `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
   ogImage: 'https://artisan.eplus.dev/og.png',

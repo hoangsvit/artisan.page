@@ -7,6 +7,19 @@ const command = commandData.default.filter(
   command => command.name.replace(':', '') === commandName
 )[0]
 
+if (! command) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: `Command Not Found - ${commandName}`
+  })
+}
+
+definePageMeta({
+  validate: async(route) => {
+    return /^[\d\.x]+$/.test(route.params.version) && /^[\w\-]+$/.test(route.params.command)
+  }
+})
+
 const pages = computed(() => [
   {
     name: command.name || 'Wait...',
@@ -16,7 +29,7 @@ const pages = computed(() => [
 ])
 
 useHead({
-  title: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
+  title: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
   titleTemplate: null,
   link: [
     {
@@ -28,9 +41,9 @@ useHead({
 
 useSeoMeta({
   description: `php artisan ${command.name} - ${command.description}`,
-  ogTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
+  ogTitle: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
   ogDescription: `php artisan ${command.name} - ${command.description}`,
-  twitterTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Laravel Artisan Cheatsheet`,
+  twitterTitle: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
   twitterDescription: `php artisan ${command.name} - ${command.description}`,
 })
 </script>
@@ -41,12 +54,14 @@ useSeoMeta({
 
     <Breadcrumbs :pages="pages" />
 
-    <Sponsors />
-
     <div
-      class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
+      class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-2/3 flex flex-col gap-8"
     >
-      <Command :command="command" :version="commandVersion" />
+      <div class="mt-8">
+        <Command :command="command" :version="commandVersion" />
+      </div>
+
+      <Carbon />
     </div>
 
     <AppFooter />

@@ -2,13 +2,19 @@
 const route = useRoute()
 const version = route.params.version
 
+definePageMeta({
+  validate: async(route) => {
+    return /^[\d\.x]+$/.test(route.params.version)
+  }
+})
+
 useHead({
   title: version,
-  titleTemplate: 'Laravel v%s - Laravel Artisan Cheatsheet',
+  titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}/`,
+      href: `https://artisan.page${route.path}`,
     },
   ],
 })
@@ -19,8 +25,6 @@ useHead({
     <Header />
 
     <Breadcrumbs :pages="[]" />
-
-    <Sponsors />
 
     <div
       class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
