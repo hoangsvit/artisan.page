@@ -10,17 +10,18 @@ defineRobotMeta()
 useSeoMeta({
   title: 'The Laravel Artisan Cheatsheet',
   description: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
-
-  ogDescription: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
-  ogImage: 'https://artisan.page/og.png',
-  ogTitle: 'The Laravel Artisan Cheatsheet',
+  ogDescription: () =>
+    `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
+  ogImage: 'https://artisan.eplus.dev/og.png',
+  ogTitle: 'Laravel Artisan Cheatsheet',
   ogType: 'website',
 
-  twitterCreator: '@jbrooksuk',
-  twitterDescription: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
-  twitterSite: '@jbrooksuk',
-  twitterImage: 'https://artisan.page/og.png',
-  twitterTitle: 'The Laravel Artisan Cheatsheet',
+  twitterCreator: '@david_nguyen94',
+  twitterDescription: () =>
+    `A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.`,
+  twitterSite: '@david_nguyen94',
+  twitterImage: 'https://artisan.eplus.dev/og.png',
+  twitterTitle: 'Laravel Artisan Cheatsheet',
   twitterCard: 'summary_large_image',
 })
 </script>
