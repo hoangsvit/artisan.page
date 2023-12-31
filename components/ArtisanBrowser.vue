@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center my-8">
+    <div class="flex justify-center my-4 md:my-8">
       <div class="w-2/3">
         <Search :model-value="filter" @update:modelValue="filterResults" />
       </div>
@@ -137,7 +137,8 @@ export default {
         if (
           command.name.toLowerCase().includes(keyword) ||
           command.synopsis.toLowerCase().includes(keyword) ||
-          command.description.toLowerCase().includes(keyword)
+          command.description.toLowerCase().includes(keyword) ||
+          command.aliases.includes(keyword)
         ) {
           return command
         }

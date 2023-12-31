@@ -11,6 +11,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
@@ -49,6 +52,8 @@ export default defineNuxtConfig({
     // '@nuxtjs/redirect-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    '@nuxtjs/web-vitals',
+    '@nuxt/image',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
   ],
