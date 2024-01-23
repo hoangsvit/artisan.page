@@ -41,9 +41,11 @@ jobs:
     name: Laravel ${{ matrix.laravel.v }}.x - PHP ${{ matrix.laravel.php }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         laravel: ${{ fromJson(needs.fetch_laravel_versions.outputs.matrix) }}
-      fail-fast: false
+        exclude:
+          - { 'laravel.v': 8, 'laravel.php': '8.0' }
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
@@ -94,6 +96,6 @@ jobs:
       - name: Commit Laravel Version
         uses: EndBug/add-and-commit@v9
         with:
-          message: "Build Laravel [${{ matrix.laravel.v }}].x [skip ci]"
+          message: "Build Laravel ${{ matrix.laravel.v }}.x [skip ci]"
           pull: ' '
           add: assets/${{ matrix.laravel.v }}.x.json
