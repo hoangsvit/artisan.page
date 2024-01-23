@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - master
+      - netlify
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 3'
+    - cron: "0 0 * * 3"
 
 jobs:
   fetch_laravel_versions:
@@ -45,7 +46,7 @@ jobs:
       matrix:
         laravel: ${{ fromJson(needs.fetch_laravel_versions.outputs.matrix) }}
         exclude:
-          - { 'laravel.v': 8, 'laravel.php': '8.0' }
+          - laravel: { v: 8, php: "8.0" }
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
@@ -97,5 +98,5 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: "Build Laravel ${{ matrix.laravel.v }}.x [skip ci]"
-          pull: ' '
+          pull: " "
           add: assets/${{ matrix.laravel.v }}.x.json
