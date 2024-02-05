@@ -46,7 +46,9 @@ jobs:
       matrix:
         laravel: ${{ fromJson(needs.fetch_laravel_versions.outputs.matrix) }}
         exclude:
-          - laravel: { v: 8, php: "8.0" }
+          - laravel:
+              php: '8.0'
+              v: 9
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
