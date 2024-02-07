@@ -61,8 +61,6 @@ useSeoMeta({
       <div class="mt-8">
         <Command :command="command" :version="commandVersion" :extended="true" />
       </div>
-
-      <Carbon />
     </div>
 
     <AppFooter />
