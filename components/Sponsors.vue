@@ -7,9 +7,9 @@
       target="_blank"
       class="font-bold text-artisan hover:text-artisan-light"
     >
-      <NuxtImg src="/sponsors/cachet.svg" class="h-8 dark:hidden" alt="Cachet" />
+      <NuxtImg src="sponsors/cachet.svg" class="h-8 dark:hidden" alt="Cachet" />
       <NuxtImg
-        src="/sponsors/cachet-dark.svg"
+        src="sponsors/cachet-dark.svg"
         class="h-8 hidden dark:block"
         alt="Cachet"
       />
@@ -21,9 +21,9 @@
       target="_blank"
       class="font-bold text-artisan hover:text-artisan-light"
     >
-      <NuxtImg src="/sponsors/checkmango.svg" class="h-8 dark:hidden" alt="Checkmango" />
+      <NuxtImg src="sponsors/checkmango.svg" class="h-8 dark:hidden" alt="Checkmango" />
       <NuxtImg
-        src="/sponsors/checkmango-dark.svg"
+        src="sponsors/checkmango-dark.svg"
         class="h-8 hidden dark:block"
         alt="Checkmango"
       />
