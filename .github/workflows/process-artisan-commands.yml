@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - master
+      - netlify
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 3'
+    - cron: "0 0 * * 3"
 
 jobs:
   fetch_laravel_versions:
@@ -99,5 +100,5 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: "Build Laravel ${{ matrix.laravel.v }}.x [skip ci]"
-          pull: ' '
+          pull: " "
           add: assets/${{ matrix.laravel.v }}.x.json
