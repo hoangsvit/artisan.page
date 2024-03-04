@@ -32,6 +32,9 @@ defineProps({
         </a>
       </li>
       <li>
+        <a href="https://james.brooks.page/blog/laravel-artisan-cheatsheet-api" class="text-gray-500 hover:text-gray-600 font-bold">API</a>
+      </li>
+      <li>
         <VersionPicker />
       </li>
       <li v-for="page in pages" :key="page.name">
@@ -50,7 +53,7 @@ defineProps({
       </li>
     </ol>
 
-    <Sponsors />
+<!--    <Sponsors />-->
 
     <div class="flex items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div class="gap-4 flex">
