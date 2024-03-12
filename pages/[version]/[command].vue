@@ -32,7 +32,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
 })
@@ -61,8 +61,6 @@ useSeoMeta({
       <div class="mt-8">
         <Command :command="command" :version="commandVersion" :extended="true" />
       </div>
-
-      <Carbon />
     </div>
 
     <AppFooter />
