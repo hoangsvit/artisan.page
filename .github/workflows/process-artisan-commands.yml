@@ -27,7 +27,7 @@ jobs:
           # Remove duplicate lines based on the first column
           # Get major v only, dedupe, and combine on one line
           # Output the JSON to the step output
-          curl -s https://packagist.org/packages/laravel/laravel.json \
+          curl -s https://packagist.org/packages/laravel/laravel.json?$(date +%F%H%M) \
           | jq -r '.package.versions[] | select(.require.php != null) | select(.version_normalized != null) | .version_normalized, .require.php' \
           | sed -e '/dev/,+1d' -e '1~2 s/\..*//' -e '2~2 s/[^|]*|//' -e 's/[^0-9]*//' \
           | cut -f1,2 -d'.' \
@@ -66,7 +66,7 @@ jobs:
           tools: composer:v2
 
       - name: Install Laravel
-        run: composer create-project --no-progress laravel/laravel="^${{ matrix.laravel.v }}" /tmp/laravel
+        run: composer create-project --no-progress laravel/laravel="^${{ matrix.laravel.v }}" --stability=beta --prefer-dist /tmp/laravel
 
       - name: Configure PHP Platform
         run: |
@@ -79,19 +79,34 @@ jobs:
           composer config repositories.nova '{"type": "composer", "url": "https://nova.laravel.com"}' --file composer.json
           composer config --global http-basic.nova.laravel.com "${{ secrets.NOVA_USERNAME }}" "${{ secrets.NOVA_LICENSE_KEY }}"
 
+      - name: Add Laravel Spark Repository
+        run: |
+          cd /tmp/laravel
+          composer config repositories.spark '{"type": "composer", "url": "https://spark.laravel.com"}' --file composer.json
+          composer config --global http-basic.spark.laravel.com "${{ secrets.SPARK_USERNAME }}" "${{ secrets.SPARK_API_TOKEN }}"
+
       - name: Install Laravel Packages
         run: |
           cd /tmp/laravel
-          for package in $(jq '.packages | .[]' ${{ github.workspace }}/manifest.json); do
-            composer require --no-progress --no-interaction --ignore-platform-reqs -W $(echo $package | xargs echo) || true
+          echo "Installing Laravel ${{ matrix.laravel.v }} Packages"
+          PACKAGES=$(jq '.configuration["${{ matrix.laravel.v }}.x"] | .[]' ${{ github.workspace }}/manifest.json)
+          for PACKAGE in $PACKAGES; do
+            composer require --no-progress --no-interaction --ignore-platform-reqs -W $(echo $PACKAGE | xargs echo) || true
           done
         continue-on-error: true
 
       - name: Run Generator Command
         run: |
           cd /tmp/laravel
-          cp ${{ github.workspace }}/build.php /tmp/laravel/ | php -f /tmp/laravel/build.php > /tmp/${{ matrix.laravel.v }}.x.json
-          cp /tmp/${{ matrix.laravel.v }}.x.json ${{ github.workspace }}/assets/
+          cp ${{ github.workspace }}/build.php /tmp/laravel/
+          BUILD_OUTPUT=$(php -f /tmp/laravel/build.php)
+          if [[ $? -eq 0 ]]; then
+            echo $BUILD_OUTPUT > /tmp/${{ matrix.laravel.v }}.x.json
+            cp /tmp/${{ matrix.laravel.v }}.x.json ${{ github.workspace }}/assets/
+          else
+            echo "Build failed"
+            exit 1
+          fi
 
       - name: Sync Git Changes
         run: git pull origin ${GITHUB_REF##*/} || true # can be run safely as only .x.json files are changed
@@ -99,6 +114,8 @@ jobs:
       - name: Commit Laravel Version
         uses: EndBug/add-and-commit@v9
         with:
-          message: "Build Laravel ${{ matrix.laravel.v }}.x [skip ci]"
-          pull: " "
+          message: |
+            Build Laravel ${{ matrix.laravel.v }}.x
+            [skip ci] [ci skip]
+          pull: ' '
           add: assets/${{ matrix.laravel.v }}.x.json
