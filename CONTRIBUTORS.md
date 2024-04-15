@@ -3,11 +3,13 @@
 Shout out to our top contributors!
 
 - [jbrooksuk](https://api.github.com/users/jbrooksuk)
+- [hoangsvit](https://api.github.com/users/hoangsvit)
 - [dependabot[bot]](https://api.github.com/users/dependabot%5Bbot%5D)
 - [StyleCIBot](https://api.github.com/users/StyleCIBot)
 - [github-actions[bot]](https://api.github.com/users/github-actions%5Bbot%5D)
 - [ash-jc-allen](https://api.github.com/users/ash-jc-allen)
 - [KevinBatdorf](https://api.github.com/users/KevinBatdorf)
+- [hoangvpo](https://api.github.com/users/hoangvpo)
 - [MFlor](https://api.github.com/users/MFlor)
 - [driesvints](https://api.github.com/users/driesvints)
 - [gabbanaesteban](https://api.github.com/users/gabbanaesteban)
