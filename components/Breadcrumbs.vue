@@ -72,6 +72,7 @@ defineProps({
         >
           <GitHubIcon class="h-6 w-6 fill-current" />
         </a>
+
       </div>
 
       <ThemePicker />
