@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - master
+      - netlify
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 3'
+    - cron: "0 0 * * 3"
 
 jobs:
   fetch_laravel_versions:
