@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { scrollToAnchor} from 'usemods'
+
 export default {
   props: ['command'],
   computed: {
@@ -18,7 +20,6 @@ export default {
     },
   },
   methods: {
-
   },
 }
 </script>
