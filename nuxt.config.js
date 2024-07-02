@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: 'https://artisan.page/favicon.ico',
+          href: 'https://artisan.eplus.dev/favicon.ico',
         },
         {
           rel: 'style',
