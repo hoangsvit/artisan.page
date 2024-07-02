@@ -62,7 +62,6 @@ useSeoMeta({
         <Command :command="command" :version="commandVersion" :extended="true" />
       </div>
 
-      <Carbon />
     </div>
 
     <AppFooter />
