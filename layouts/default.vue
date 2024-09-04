@@ -13,14 +13,14 @@ useSeoMeta({
   keywords: ['laravel', ...laravel.map(version => `laravel ${version}`), 'artisan', 'cheatsheet', 'cheat sheet', 'commands', 'cli', 'php', ...packages.map(pkg => pkg.split('/').join(' '))].join(', '),
 
   ogDescription: "The Laravel Artisan cheatsheet. Discover Laravel's php artisan commands.",
-  ogImage: 'https://artisan.page/og.png',
+  ogImage: 'https://artisan.eplus.dev/og.png',
   ogTitle: 'The Laravel Artisan Cheatsheet',
   ogType: 'website',
 
   twitterCreator: '@jbrooksuk',
   twitterDescription: "The Laravel Artisan cheatsheet. Discover Laravel's php artisan commands.",
   twitterSite: '@jbrooksuk',
-  twitterImage: 'https://artisan.page/og.png',
+  twitterImage: 'https://artisan.eplus.dev/og.png',
   twitterTitle: 'The Laravel Artisan Cheatsheet',
   twitterCard: 'summary_large_image',
 })
