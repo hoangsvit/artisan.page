@@ -13,7 +13,7 @@
     "laravel/pennant",
     "laravel/nova",
     "laravel/octane",
-    "laravel/pulse:@beta",
+    "laravel/pulse",
     "laravel/reverb",
     "laravel/sail",
     "laravel/sanctum",
@@ -23,6 +23,7 @@
     "laravel/spark-stripe",
     "laravel/telescope",
     "livewire/livewire",
+    "livewire/volt",
     "inertiajs/inertia-laravel"
   ],
   "configuration": {
@@ -39,8 +40,8 @@
       "laravel/pennant",
       "laravel/nova",
       "laravel/octane",
-      "laravel/pulse:@beta",
-      "laravel/reverb:@beta",
+      "laravel/pulse",
+      "laravel/reverb",
       "laravel/sail",
       "laravel/sanctum",
       "laravel/scout",
@@ -49,6 +50,7 @@
       "laravel/spark-stripe",
       "laravel/telescope",
       "livewire/livewire",
+      "livewire/volt",
       "inertiajs/inertia-laravel"
     ],
     "10.x": [
@@ -64,8 +66,8 @@
       "laravel/pennant",
       "laravel/nova",
       "laravel/octane",
-      "laravel/pulse:@beta",
-      "laravel/reverb:@beta",
+      "laravel/pulse",
+      "laravel/reverb",
       "laravel/sail",
       "laravel/sanctum",
       "laravel/scout",
@@ -74,6 +76,7 @@
       "laravel/spark-stripe",
       "laravel/telescope",
       "livewire/livewire",
+      "livewire/volt",
       "inertiajs/inertia-laravel"
     ],
     "9.x": [
