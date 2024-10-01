@@ -15,5 +15,6 @@ Shout out to our top contributors!
 - [gabbanaesteban](https://api.github.com/users/gabbanaesteban)
 - [naimsolong](https://api.github.com/users/naimsolong)
 - [clemblanco](https://api.github.com/users/clemblanco)
+- [daleweaver777](https://api.github.com/users/daleweaver777)
 - [ShaungBhone](https://api.github.com/users/ShaungBhone)
 - [izshreyansh](https://api.github.com/users/izshreyansh)
