@@ -58,12 +58,21 @@ defineProps({
     <div class="flex items-center gap-4 px-4 sm:px-6 lg:px-8">
       <div class="gap-4 flex">
         <a
-          href="https://x.com/jbrooksuk"
+          href="https://twitter.com/david_nguyen94"
           class="text-artisan hover:text-artisan-light hidden md:block"
-          title="Follow @jbrooksuk on Twitter"
+          title="Follow @david_nguyen94 on Twitter"
         >
           <TwitterIcon class="h-6 w-6 fill-current" />
         </a>
+
+        <a
+          href="https://github.com/hoangsvit/artisan.page"
+          class="text-artisan hover:text-artisan-light hidden md:block"
+          title="Star on GitHub"
+        >
+          <GitHubIcon class="h-6 w-6 fill-current" />
+        </a>
+
       </div>
 
       <ThemePicker />
