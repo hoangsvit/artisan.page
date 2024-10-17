@@ -1,11 +1,10 @@
 <template>
   <div class="items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-8 hidden sm:flex">
     <a
-      href="https://cachethq.io/?ref=artisan.page"
-      title="Cachet — The Open-Source Status Page System"
+      href="https://github.com/jbrooksuk/artisan.page?sponsor=1"
+      title="Sponsor artisan.page"
       @click="sponsorClick"
       target="_blank"
-      class="font-bold text-artisan hover:text-artisan-light"
     >
       <NuxtImg src="sponsors/cachet.svg" class="h-8 dark:hidden" alt="Cachet" />
       <NuxtImg

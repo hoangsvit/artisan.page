@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/img/logo-dark.svg" height="160">
-    <img src="assets/img/logo.svg" alt="The Laravel Artisan Cheatsheet" height="160" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/img/logo-dark.svg" height="100">
+    <img src="assets/img/logo.svg" alt="The Laravel Artisan Cheatsheet" height="100" />
   </picture>
 </p>
 
