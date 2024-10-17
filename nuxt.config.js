@@ -3,11 +3,9 @@ import { laravel } from './manifest'
 export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
   ssr: true,
 
   site: {
-    indexable: true,
     url: 'https://artisan.eplus.dev',
   },
 
@@ -54,10 +52,10 @@ export default defineNuxtConfig({
     // '@nuxtjs/redirect-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
     '@nuxtjs/web-vitals',
     '@nuxt/image',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -83,6 +81,4 @@ export default defineNuxtConfig({
     classSuffix: '',
     storageKey: 'nuxt-color-mode',
   },
-
-  compatibilityDate: '2024-10-16',
 })
