@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - netlify
   pull_request:
     branches:
       - '!dependabot/**'

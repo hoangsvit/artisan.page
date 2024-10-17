@@ -6,11 +6,11 @@
 </p>
 
 <p align="center" style="display: flex; gap: 2rem; justify-content: center; width: 100%; align-items: center; height: 50px">
-    <a href="https://github.com/jbrooksuk/artisan.page/?sponsor=1">
-        <img src="https://img.shields.io/github/sponsors/jbrooksuk" alt="GitHub Sponsors">
+    <a href="https://checkmango.com">
+        <img src="https://github.com/hoangsvit/artisan.page/raw/master/public/sponsors/checkmango.svg" alt="Checkmango" height="36">
     </a>
-    <a href="LICENSE.md">
-        <img src="https://img.shields.io/github/license/jbrooksuk/artisan.page" alt="License">
+    <a href="https://cachethq.io">
+        <img src="https://github.com/hoangsvit/artisan.page/raw/master/public/sponsors/cachet.svg" alt="Cachet" height="36">
     </a>
 </p>
 
@@ -39,7 +39,7 @@ $ npm run generate
 
 ## Credits
 
-- [James Brooks](https://github.com/jbrooksuk)
+- [David Nguyen](https://github.com/hoangsvit)
 - [All Contributors](../../contributors)
 
 ## License

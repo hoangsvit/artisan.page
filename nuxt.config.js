@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   ssr: true,
 
   site: {
-    url: 'https://artisan.page',
     indexable: true,
+    url: 'https://artisan.eplus.dev',
   },
 
   app: {
@@ -23,21 +23,13 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: 'https://artisan.page/favicon.ico',
+          href: 'https://artisan.eplus.dev/favicon.ico',
         },
         {
           rel: 'style',
           href: 'https://fonts.bunny.net/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap',
         },
-      ],
-      script: [
-        process.env.NODE_ENV === 'production' && {
-          src: 'https://cdn.usefathom.com/script.js',
-          'data-site': 'FMUFNTYW',
-          'data-canonical': false,
-          defer: 'defer',
-        },
-      ],
+      ]
     },
   },
 
