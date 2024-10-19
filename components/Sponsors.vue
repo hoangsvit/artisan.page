@@ -1,7 +1,7 @@
 <template>
   <div class="items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-8 hidden sm:flex">
     <a
-      href="https://github.com/jbrooksuk/artisan.page?sponsor=1"
+      href="https://github.com/hoangsvit/artisan.page?sponsor=1"
       title="Sponsor artisan.page"
       @click="sponsorClick"
       target="_blank"
