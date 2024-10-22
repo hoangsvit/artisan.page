@@ -12,7 +12,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
 })
@@ -37,8 +37,6 @@ useSeoMeta({
       class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
     >
       <ArtisanBrowser :version="$route.params.version" />
-
-      <Carbon />
     </div>
 
     <AppFooter />
