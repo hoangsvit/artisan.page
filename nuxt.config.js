@@ -26,8 +26,8 @@ export default defineNuxtConfig({
           href: 'https://artisan.page/favicon.ico',
         },
         {
-          rel: 'style',
-          href: 'https://fonts.bunny.net/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap',
+          rel: 'stylesheet',
+          href: 'https://fonts.bunny.net/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap',
         },
       ],
       script: [
@@ -75,10 +75,21 @@ export default defineNuxtConfig({
   build: {},
 
   sitemap: {
-    cacheMaxAgeSeconds: 360, // 1 hour
+    cacheMaxAgeSeconds: 86400, // 24 hours
     sources: [
       '/api/__sitemap__/urls'
     ]
+  },
+
+  robots: {
+    groups: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/'],
+      },
+    ],
+    sitemap: 'https://artisan.page/sitemap.xml',
   },
 
   colorMode: {

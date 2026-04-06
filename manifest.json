@@ -1,6 +1,7 @@
 {
-  "laravel": ["12.x", "11.x", "10.x", "9.x", "8.x", "7.x", "6.x", "5.x"],
+  "laravel": ["13.x", "12.x", "11.x", "10.x", "9.x", "8.x", "7.x", "6.x", "5.x"],
   "packages": [
+    "laravel/boost",
     "laravel/breeze",
     "laravel/cashier",
     "laravel/cashier-paddle",
@@ -9,6 +10,7 @@
     "laravel/fortify",
     "laravel/horizon",
     "laravel/jetstream",
+    "laravel/mcp",
     "laravel/passport",
     "laravel/pennant",
     "laravel/nightwatch",
@@ -29,7 +31,8 @@
     "inertiajs/inertia-laravel"
   ],
   "configuration": {
-     "12.x": [
+     "13.x": [
+      "laravel/boost",
       "laravel/breeze",
       "laravel/cashier",
       "laravel/cashier-paddle",
@@ -38,6 +41,7 @@
       "laravel/fortify",
       "laravel/horizon",
       "laravel/jetstream",
+      "laravel/mcp",
       "laravel/passport",
       "laravel/pennant",
       "laravel/nightwatch",
@@ -52,12 +56,13 @@
       "laravel/spark-paddle",
       "laravel/spark-stripe",
       "laravel/telescope",
-      "livewire/livewire",
       "laravel/vapor-core",
+      "livewire/livewire",
       "livewire/volt",
       "inertiajs/inertia-laravel"
     ],
-    "11.x": [
+     "12.x": [
+      "laravel/boost",
       "laravel/breeze",
       "laravel/cashier",
       "laravel/cashier-paddle",
@@ -66,6 +71,37 @@
       "laravel/fortify",
       "laravel/horizon",
       "laravel/jetstream",
+      "laravel/mcp",
+      "laravel/passport",
+      "laravel/pennant",
+      "laravel/nightwatch",
+      "laravel/nova",
+      "laravel/octane",
+      "laravel/pulse",
+      "laravel/reverb",
+      "laravel/sail",
+      "laravel/sanctum",
+      "laravel/scout",
+      "laravel/socialite",
+      "laravel/spark-paddle",
+      "laravel/spark-stripe",
+      "laravel/telescope",
+      "laravel/vapor-core",
+      "livewire/livewire",
+      "livewire/volt",
+      "inertiajs/inertia-laravel"
+    ],
+    "11.x": [
+      "laravel/boost",
+      "laravel/breeze",
+      "laravel/cashier",
+      "laravel/cashier-paddle",
+      "laravel/dusk",
+      "laravel/envoy",
+      "laravel/fortify",
+      "laravel/horizon",
+      "laravel/jetstream",
+      "laravel/mcp",
       "laravel/passport",
       "laravel/pennant",
       "laravel/nightwatch",
