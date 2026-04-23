@@ -11,6 +11,9 @@ on:
   schedule:
     - cron: '0 0,12,22 * * *'
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   fetch_laravel_versions:
     name: Discover Latest Laravel Versions
@@ -72,6 +75,10 @@ jobs:
         run: |
           cd /tmp/laravel
           composer config platform.php ${{ matrix.laravel.php }} --file composer.json
+          # Older Composer versions (used for legacy PHP on Laravel 5.x) don't
+          # know this setting, and also don't enforce the audit block, so skip
+          # on failure.
+          composer config audit.block-insecure false --file composer.json || true
 
       - name: Add Laravel Nova Repository
         run: |
