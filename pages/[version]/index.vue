@@ -15,7 +15,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
   script: [
@@ -29,13 +29,13 @@ useHead({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://artisan.page',
+            item: 'https://artisan.eplus.dev',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: `Laravel ${version}`,
-            item: `https://artisan.page/${version}`,
+            item: `https://artisan.eplus.dev/${version}`,
           },
         ],
       }),
@@ -52,14 +52,14 @@ useHead({
           '@type': 'ListItem',
           position: index + 1,
           name: `php artisan ${cmd.name}`,
-          url: `https://artisan.page/${version}/${cmd.name.replace(':', '')}`,
+          url: `https://artisan.eplus.dev/${version}/${cmd.name.replace(':', '')}`,
         })),
       }),
     },
   ],
 })
 
-const ogImageUrl = `https://artisan.page/api/og?version=${encodeURIComponent(version)}&count=${allCommands.length}`
+const ogImageUrl = `https://artisan.eplus.dev/api/og?version=${encodeURIComponent(version)}&count=${allCommands.length}`
 
 useSeoMeta({
   title: version,
@@ -71,7 +71,7 @@ useSeoMeta({
   ogImage: ogImageUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogUrl: `https://artisan.page/${version}`,
+  ogUrl: `https://artisan.eplus.dev/${version}`,
   twitterTitle: `Laravel ${version} Artisan Cheatsheet - artisan.page`,
   twitterDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version}.`,
   twitterImage: ogImageUrl,
