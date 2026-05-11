@@ -59,7 +59,7 @@ useHead({
   ],
 })
 
-const ogImageUrl = `https://artisan.eplus.dev/api/og?version=${encodeURIComponent(version)}&count=${allCommands.length}`
+const ogImageUrl = `https://artisan.eplus.dev/og/${version}.png`
 
 useSeoMeta({
   title: version,

@@ -50,7 +50,7 @@ const cleanDescription = sanitise(command.description, 200)
 const metaDescription = sanitise(`php artisan ${command.name} — ${cleanDescription} — Laravel ${commandVersion}`, 155)
 const socialDescription = sanitise(`${cleanDescription} — Laravel ${commandVersion} Artisan command reference.`, 200)
 
-const ogImageUrl = `https://artisan.eplus.dev/api/og?command=${encodeURIComponent(command.name)}&description=${encodeURIComponent(cleanDescription)}&version=${encodeURIComponent(commandVersion)}`
+const ogImageUrl = `https://artisan.eplus.dev/og/${commandVersion}/${commandName}.png`
 
 useHead({
   link: [
