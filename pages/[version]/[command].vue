@@ -50,13 +50,13 @@ const cleanDescription = sanitise(command.description, 200)
 const metaDescription = sanitise(`php artisan ${command.name} — ${cleanDescription} — Laravel ${commandVersion}`, 155)
 const socialDescription = sanitise(`${cleanDescription} — Laravel ${commandVersion} Artisan command reference.`, 200)
 
-const ogImageUrl = `https://artisan.page/og/${commandVersion}/${commandName}.png`
+const ogImageUrl = `https://artisan.eplus.dev/og/${commandVersion}/${commandName}.png`
 
 useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
   script: [
@@ -70,19 +70,19 @@ useHead({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://artisan.page',
+            item: 'https://artisan.eplus.dev',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: `Laravel ${commandVersion}`,
-            item: `https://artisan.page/${commandVersion}`,
+            item: `https://artisan.eplus.dev/${commandVersion}`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: command.name,
-            item: `https://artisan.page/${commandVersion}/${commandName}`,
+            item: `https://artisan.eplus.dev/${commandVersion}/${commandName}`,
           },
         ],
       }),
@@ -94,7 +94,7 @@ useHead({
         '@type': 'TechArticle',
         headline: `php artisan ${command.name}`,
         description: cleanDescription,
-        url: `https://artisan.page/${commandVersion}/${commandName}`,
+        url: `https://artisan.eplus.dev/${commandVersion}/${commandName}`,
         inLanguage: 'en',
         proficiencyLevel: 'Beginner',
         keywords: ['Laravel', 'Artisan', `Laravel ${commandVersion}`, command.name, `php artisan ${command.name}`],
@@ -108,7 +108,7 @@ useHead({
         isPartOf: {
           '@type': 'WebSite',
           name: 'Artisan.page',
-          url: 'https://artisan.page',
+          url: 'https://artisan.eplus.dev',
         },
       }),
     },
@@ -125,7 +125,7 @@ useSeoMeta({
   ogImage: ogImageUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogUrl: `https://artisan.page/${commandVersion}/${commandName}`,
+  ogUrl: `https://artisan.eplus.dev/${commandVersion}/${commandName}`,
   twitterTitle: `php artisan ${command.name} — Laravel ${commandVersion}`,
   twitterDescription: socialDescription,
   twitterImage: ogImageUrl,
