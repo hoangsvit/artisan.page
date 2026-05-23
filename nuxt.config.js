@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://artisan.page',
+    url: 'https://artisan.eplus.dev',
     indexable: true,
   },
 
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: 'https://artisan.page/favicon.ico',
+          href: 'https://artisan.eplus.dev/favicon.ico',
         },
         {
           rel: 'stylesheet',
@@ -133,7 +133,7 @@ export default defineNuxtConfig({
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://artisan.page/sitemap.xml',
+    sitemap: 'https://artisan.eplus.dev/sitemap.xml',
   },
 
   colorMode: {
