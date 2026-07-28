@@ -59,13 +59,13 @@ function renderHome() {
   lines.push('## Versions')
   lines.push('')
   for (const v of laravel) {
-    lines.push(`- [Laravel ${v}](https://artisan.page/${v})`)
+    lines.push(`- [Laravel ${v}](https://artisan.eplus.dev/${v})`)
   }
   lines.push('')
   lines.push('## Resources')
   lines.push('')
-  lines.push('- Documentation for agents: https://artisan.page/llms.txt')
-  lines.push('- API catalog: https://artisan.page/.well-known/api-catalog')
+  lines.push('- Documentation for agents: https://artisan.eplus.dev/llms.txt')
+  lines.push('- API catalog: https://artisan.eplus.dev/.well-known/api-catalog')
   lines.push('- Source: https://github.com/jbrooksuk/artisan.page')
   return lines.join('\n')
 }
@@ -83,10 +83,10 @@ function renderVersionIndex(version, commands) {
   for (const cmd of commands) {
     const slug = cmd.name.replace(':', '')
     const desc = cmd.description ? ` — ${cmd.description}` : ''
-    lines.push(`- [\`php artisan ${cmd.name}\`](https://artisan.page/${version}/${slug})${desc}`)
+    lines.push(`- [\`php artisan ${cmd.name}\`](https://artisan.eplus.dev/${version}/${slug})${desc}`)
   }
   lines.push('')
-  lines.push(`Source: https://artisan.page/${version}`)
+  lines.push(`Source: https://artisan.eplus.dev/${version}`)
   return lines.join('\n')
 }
 
@@ -140,7 +140,7 @@ function renderCommand(command, version) {
 
   const slug = command.name.replace(':', '')
   lines.push('')
-  lines.push(`Source: https://artisan.page/${version}/${slug}`)
+  lines.push(`Source: https://artisan.eplus.dev/${version}/${slug}`)
   return lines.join('\n')
 }
 
