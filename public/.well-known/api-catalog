@@ -1,21 +1,21 @@
 {
   "linkset": [
     {
-      "anchor": "https://artisan.page/api/versions",
+      "anchor": "https://artisan.eplus.dev/api/versions",
       "service-doc": [
-        { "href": "https://artisan.page/llms.txt", "type": "text/plain" }
+        { "href": "https://artisan.eplus.dev/llms.txt", "type": "text/plain" }
       ]
     },
     {
-      "anchor": "https://artisan.page/api/latest",
+      "anchor": "https://artisan.eplus.dev/api/latest",
       "service-doc": [
-        { "href": "https://artisan.page/llms.txt", "type": "text/plain" }
+        { "href": "https://artisan.eplus.dev/llms.txt", "type": "text/plain" }
       ]
     },
     {
-      "anchor": "https://artisan.page/api/packages",
+      "anchor": "https://artisan.eplus.dev/api/packages",
       "service-doc": [
-        { "href": "https://artisan.page/llms.txt", "type": "text/plain" }
+        { "href": "https://artisan.eplus.dev/llms.txt", "type": "text/plain" }
       ]
     }
   ]

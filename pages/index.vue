@@ -6,7 +6,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
 })
@@ -18,7 +18,7 @@ useSeoMeta({
   description: `The Laravel ${laravel[0]} Artisan cheatsheet. Discover Laravel ${laravel[0]} php artisan commands.`,
   ogTitle: `Laravel ${laravel[0]} Artisan Cheatsheet - artisan.page`,
   ogDescription: `The Laravel ${laravel[0]} Artisan cheatsheet. Discover Laravel ${laravel[0]} php artisan commands.`,
-  ogUrl: 'https://artisan.page',
+  ogUrl: 'https://artisan.eplus.dev',
   twitterTitle: `Laravel ${laravel[0]} Artisan Cheatsheet - artisan.page`,
   twitterDescription: `The Laravel ${laravel[0]} Artisan cheatsheet. Discover Laravel ${laravel[0]} php artisan commands.`,
 })
