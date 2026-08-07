@@ -65,15 +65,15 @@ useSeoMeta({
   title: version,
   titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
 
-  description: `The Laravel ${version} Artisan cheatsheet — browse and search ${allCommands.length} php artisan commands.`,
-  ogTitle: `Laravel ${version} Artisan Cheatsheet - artisan.page`,
-  ogDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version}.`,
+  description: `The Laravel ${version} Artisan cheatsheet maintained by hoangsvit — browse and search ${allCommands.length} php artisan commands.`,
+  ogTitle: `Laravel ${version} Artisan Cheatsheet - artisan.eplus.dev`,
+  ogDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version} on artisan.eplus.dev.`,
   ogImage: ogImageUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogUrl: `https://artisan.eplus.dev/${version}`,
-  twitterTitle: `Laravel ${version} Artisan Cheatsheet - artisan.page`,
-  twitterDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version}.`,
+  twitterTitle: `Laravel ${version} Artisan Cheatsheet - artisan.eplus.dev`,
+  twitterDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version} on artisan.eplus.dev.`,
   twitterImage: ogImageUrl,
 })
 </script>
