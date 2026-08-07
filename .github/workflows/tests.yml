@@ -3,8 +3,10 @@ name: Tests
 on:
   push:
     branches:
-      - master
+      - netlify
   pull_request:
+    branches:
+      - netlify
   workflow_dispatch:
 
 env:
