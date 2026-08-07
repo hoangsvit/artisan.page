@@ -6,7 +6,7 @@
       <div class="relative">
         <NuxtLink href="/">
           <Logo class="h-16" />
-          <span class="sr-only">The Laravel Artisan Cheatsheet</span>
+          <span class="sr-only">artisan.eplus.dev</span>
         </NuxtLink>
       </div>
       <div>
@@ -17,7 +17,7 @@
             class="text-artisan hover:text-artisan-light"
             >Laravel's</a
           >
-          Artisan commands.
+          Artisan commands, maintained by hoangsvit.
         </h2>
       </div>
     </div>
