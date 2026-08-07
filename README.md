@@ -1,23 +1,9 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/img/logo-dark.svg" height="100">
-    <img src="assets/img/logo.svg" alt="The Laravel Artisan Cheatsheet" height="100" />
-  </picture>
-</p>
+# artisan.eplus.dev
 
-<p align="center">
-  <a href="https://artisan.eplus.dev"><strong>artisan.eplus.dev</strong></a>
-  · maintained by <a href="https://github.com/hoangsvit">hoangsvit</a> / <a href="https://eplus.dev">ePlus.DEV</a>
-</p>
+**Laravel Artisan cheatsheet maintained by [hoangsvit](https://github.com/hoangsvit) / [ePlus.DEV](https://eplus.dev).**
 
-<p align="center">
-  <a href="https://github.com/sponsors/ePlus-DEV">
-    <img src="https://img.shields.io/github/sponsors/ePlus-DEV" alt="Sponsor ePlus.DEV">
-  </a>
-  <a href="LICENSE.md">
-    <img src="https://img.shields.io/github/license/hoangsvit/artisan.page" alt="License">
-  </a>
-</p>
+[![Sponsor ePlus.DEV](https://img.shields.io/github/sponsors/ePlus-DEV)](https://github.com/sponsors/ePlus-DEV)
+[![License](https://img.shields.io/github/license/hoangsvit/artisan.page)](LICENSE.md)
 
 A bookmarkable, searchable cheatsheet for [Laravel's](https://laravel.com) Artisan commands.
 
