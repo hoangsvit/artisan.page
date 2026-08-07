@@ -15,7 +15,7 @@ describe('loadCommandsFor', () => {
 })
 
 describe('renderCommandSvg', () => {
-  it('renders the command, description and version', () => {
+  it('renders the command, description, version and ePlus branding', () => {
     const svg = renderCommandSvg({
       command: 'migrate:fresh',
       description: 'Drop all tables and re-run all migrations',
@@ -24,6 +24,8 @@ describe('renderCommandSvg', () => {
     expect(svg).toContain('migrate:fresh')
     expect(svg).toContain('Drop all tables and re-run all migrations')
     expect(svg).toContain('Laravel 13.x')
+    expect(svg).toContain('artisan.eplus.dev')
+    expect(svg).toContain('hoangsvit')
     expect(svg).toContain('<svg width="1200" height="630"')
   })
 
