@@ -107,7 +107,7 @@ useHead({
         },
         isPartOf: {
           '@type': 'WebSite',
-          name: 'Artisan.page',
+          name: 'artisan.eplus.dev',
           url: 'https://artisan.eplus.dev',
         },
       }),
@@ -130,35 +130,25 @@ useSeoMeta({
   twitterDescription: socialDescription,
   twitterImage: ogImageUrl,
 })
-
-const sponsorClick = () => {
-  if (typeof window.fathom !== 'undefined') {
-    window.fathom.trackGoal('L3DZXKHP', 0)
-  }
-}
 </script>
 
 <template>
   <div class="flex flex-col md:flex-row h-screen overflow-hidden bg-white dark:bg-gray-950">
-    <!-- Mobile Header -->
     <MobileHeader
       :command-name="command.name"
       :version="currentVersion"
       :commands="allCommands"
     />
 
-    <!-- Desktop Sidebar -->
     <aside class="hidden md:flex md:flex-col md:w-[280px] border-r border-gray-200 dark:border-gray-800 h-full shrink-0">
-      <!-- Logo + Version -->
       <div class="flex items-center justify-between px-3 pt-3 pb-2">
         <NuxtLink href="/">
           <LogoIcon id="cmd-sidebar-logo" class="h-[30px] w-auto" />
-          <span class="sr-only">Artisan.page</span>
+          <span class="sr-only">artisan.eplus.dev</span>
         </NuxtLink>
         <VersionPicker />
       </div>
 
-      <!-- Command List -->
       <nav class="flex-1 overflow-y-auto sidebar-scroll px-5 pb-4">
         <div v-for="(group, groupName) in commandLinks" :key="groupName">
           <h3 class="font-sans font-medium text-[13px] text-gray-950 dark:text-gray-400 py-2.5 leading-4">
@@ -176,28 +166,32 @@ const sponsorClick = () => {
         </div>
       </nav>
 
-      <!-- Footer -->
-      <div class="border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 py-4">
-        <a
-          href="https://github.com/sponsors/jbrooksuk"
-          title="Sponsor James Brooks"
-          @click="sponsorClick"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
-        >
-          <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
-          </svg>
-          Sponsor @jbrooksuk
-        </a>
-        <ThemePicker />
+      <div class="border-t border-gray-200 dark:border-gray-800 px-3 py-3">
+        <div class="flex items-center justify-between gap-2">
+          <a
+            href="https://github.com/sponsors/ePlus-DEV"
+            title="Sponsor ePlus.DEV"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
+          >
+            <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
+            </svg>
+            Sponsor ePlus.DEV
+          </a>
+          <ThemePicker />
+        </div>
+        <p class="mt-2 text-[10px] leading-4 text-gray-400 dark:text-gray-600">
+          Maintained by
+          <a href="https://github.com/hoangsvit" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 dark:hover:text-gray-400">hoangsvit</a>
+          · Fork of
+          <a href="https://github.com/jbrooksuk/artisan.page" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 dark:hover:text-gray-400">artisan.page</a>
+        </p>
       </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="flex-1 overflow-y-auto">
-      <!-- Page Header -->
       <div class="hidden md:block border-b border-gray-200/80 dark:border-gray-800/80 bg-gradient-to-b from-gray-50/50 to-transparent dark:from-gray-900/30 dark:to-transparent">
         <div class="flex items-center justify-between px-4 md:px-8 py-5 max-w-3xl mx-auto w-full">
           <div class="flex items-center gap-3">
@@ -206,23 +200,22 @@ const sponsorClick = () => {
             </NuxtLink>
             <div>
               <h1 class="font-sans font-semibold text-gray-950 dark:text-gray-200 text-base leading-tight">
-                <NuxtLink href="/">Artisan.page</NuxtLink>
+                <NuxtLink href="/">artisan.eplus.dev</NuxtLink>
               </h1>
-              <span class="text-[11px] text-gray-500 dark:text-gray-500 leading-tight">The Laravel Artisan cheatsheet</span>
+              <span class="text-[11px] text-gray-500 dark:text-gray-500 leading-tight">The Laravel Artisan cheatsheet by hoangsvit</span>
             </div>
           </div>
           <div class="flex items-center gap-5">
             <a
-              href="https://github.com/sponsors/jbrooksuk"
-              @click="sponsorClick"
+              href="https://github.com/sponsors/ePlus-DEV"
               target="_blank"
               rel="noopener noreferrer"
               class="text-artisan-accent text-xs hover:underline decoration-artisan-accent/40"
             >
-              Sponsor ↗
+              Donate to ePlus.DEV ↗
             </a>
             <a
-              href="https://github.com/jbrooksuk/artisan.page"
+              href="https://github.com/hoangsvit/artisan.page"
               target="_blank"
               rel="noopener noreferrer"
               class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
@@ -235,28 +228,27 @@ const sponsorClick = () => {
       </div>
 
       <Command :command="command" :version="commandVersion" :extended="true" />
-
-      <div class="px-4 md:px-8 py-6 max-w-3xl mx-auto w-full">
-        <Carbon />
-      </div>
     </main>
 
-    <!-- Mobile Footer -->
-    <div class="md:hidden border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 py-4 bg-white dark:bg-gray-950">
-      <a
-        href="https://github.com/sponsors/jbrooksuk"
-        title="Sponsor James Brooks"
-        @click="sponsorClick"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
-      >
-        <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
-        </svg>
-        Sponsor @jbrooksuk
-      </a>
-      <ThemePicker />
+    <div class="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 px-3 py-3">
+      <div class="flex items-center justify-between gap-2">
+        <a
+          href="https://github.com/sponsors/ePlus-DEV"
+          title="Sponsor ePlus.DEV"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
+        >
+          <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
+          </svg>
+          Sponsor ePlus.DEV
+        </a>
+        <ThemePicker />
+      </div>
+      <p class="mt-1.5 text-center text-[9px] leading-3 text-gray-400 dark:text-gray-600">
+        Maintained by hoangsvit · Fork of artisan.page
+      </p>
     </div>
   </div>
 </template>
