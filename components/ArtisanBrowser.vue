@@ -1,12 +1,10 @@
 <template>
   <div class="flex flex-col md:flex-row h-screen overflow-hidden bg-white dark:bg-gray-950">
-    <!-- Mobile Header -->
     <MobileHeader
       :version="currentVersion"
       @search="showMobileSearch = true"
     />
 
-    <!-- Mobile Search Overlay -->
     <ClientOnly>
       <MobileSearch
         v-model="showMobileSearch"
@@ -16,23 +14,19 @@
       />
     </ClientOnly>
 
-    <!-- Desktop Sidebar -->
     <aside class="hidden md:flex md:flex-col md:w-[280px] border-r border-gray-200 dark:border-gray-800 h-full shrink-0">
-      <!-- Logo + Version -->
       <div class="flex items-center justify-between px-3 pt-3 pb-2">
         <NuxtLink href="/">
           <LogoIcon id="sidebar-logo" class="h-[30px] w-auto" />
-          <span class="sr-only">Artisan.page</span>
+          <span class="sr-only">artisan.eplus.dev</span>
         </NuxtLink>
         <VersionPicker />
       </div>
 
-      <!-- Search -->
       <div class="px-3 py-2">
         <Search :model-value="filter" @update:modelValue="filterResults" />
       </div>
 
-      <!-- Command List -->
       <nav class="flex-1 overflow-y-auto sidebar-scroll px-5 pb-4">
         <div v-if="!commandData.length" class="py-4">
           <CommandsLoading />
@@ -53,61 +47,64 @@
         </div>
       </nav>
 
-      <!-- Footer -->
-      <div class="border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 py-4">
-        <a
-          href="https://github.com/sponsors/jbrooksuk"
-          title="Sponsor James Brooks"
-          @click="sponsorClick"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
-        >
-          <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
-          </svg>
-          Sponsor @jbrooksuk
-        </a>
-        <ThemePicker />
+      <div class="border-t border-gray-200 dark:border-gray-800 px-3 py-3">
+        <div class="flex items-center justify-between gap-2">
+          <a
+            href="https://github.com/sponsors/ePlus-DEV"
+            title="Sponsor ePlus.DEV"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
+          >
+            <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
+            </svg>
+            Sponsor ePlus.DEV
+          </a>
+          <ThemePicker />
+        </div>
+        <p class="mt-2 text-[10px] leading-4 text-gray-400 dark:text-gray-600">
+          Maintained by
+          <a href="https://github.com/hoangsvit" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 dark:hover:text-gray-400">hoangsvit</a>
+          · Fork of
+          <a href="https://github.com/jbrooksuk/artisan.page" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 dark:hover:text-gray-400">artisan.page</a>
+        </p>
       </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="flex-1 overflow-y-auto" ref="mainContent" @scroll="handleScroll">
-      <!-- Page Header -->
       <div class="hidden md:block border-b border-gray-200/80 dark:border-gray-800/80 bg-gradient-to-b from-gray-50/50 to-transparent dark:from-gray-900/30 dark:to-transparent">
         <div class="flex items-center justify-between px-4 md:px-8 py-5 max-w-3xl mx-auto w-full">
-        <div class="flex items-center gap-3">
-          <NuxtLink href="/">
-            <LogoIcon id="header-logo" class="h-8 w-auto" />
-          </NuxtLink>
-          <div>
-            <h1 class="font-sans font-semibold text-gray-950 dark:text-gray-200 text-base leading-tight">
-              <NuxtLink href="/">Artisan.page</NuxtLink>
-            </h1>
-            <span class="text-[11px] text-gray-500 dark:text-gray-500 leading-tight">The Laravel Artisan cheatsheet</span>
+          <div class="flex items-center gap-3">
+            <NuxtLink href="/">
+              <LogoIcon id="header-logo" class="h-8 w-auto" />
+            </NuxtLink>
+            <div>
+              <h1 class="font-sans font-semibold text-gray-950 dark:text-gray-200 text-base leading-tight">
+                <NuxtLink href="/">artisan.eplus.dev</NuxtLink>
+              </h1>
+              <span class="text-[11px] text-gray-500 dark:text-gray-500 leading-tight">The Laravel Artisan cheatsheet by hoangsvit</span>
+            </div>
           </div>
-        </div>
-        <div class="flex items-center gap-5">
-          <a
-            href="https://github.com/sponsors/jbrooksuk"
-            @click="sponsorClick"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-artisan-accent text-xs hover:underline decoration-artisan-accent/40"
-          >
-            Sponsor ↗
-          </a>
-          <a
-            href="https://github.com/jbrooksuk/artisan.page"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-            title="GitHub"
-          >
-            <svg class="size-4" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </a>
-        </div>
+          <div class="flex items-center gap-5">
+            <a
+              href="https://github.com/sponsors/ePlus-DEV"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-artisan-accent text-xs hover:underline decoration-artisan-accent/40"
+            >
+              Donate to ePlus.DEV ↗
+            </a>
+            <a
+              href="https://github.com/hoangsvit/artisan.page"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              title="GitHub"
+            >
+              <svg class="size-4" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -121,40 +118,35 @@
         </p>
       </div>
 
-      <template v-for="(command, index) in commands" :key="command.name">
+      <template v-for="command in commands" :key="command.name">
         <Command
           :command="command"
           :version="currentVersion"
         />
-
-        <!-- Carbon ad after the 2nd command -->
-        <div v-if="index === 1" class="border-b border-gray-200 dark:border-gray-800">
-          <div class="px-4 md:px-8 py-6 max-w-3xl mx-auto w-full">
-          <Carbon />
-          </div>
-        </div>
       </template>
     </main>
 
-    <!-- Mobile Footer -->
-    <div class="md:hidden border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 py-4 bg-white dark:bg-gray-950 shrink-0">
-      <a
-        href="https://github.com/sponsors/jbrooksuk"
-        title="Sponsor James Brooks"
-        @click="sponsorClick"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
-      >
-        <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
-        </svg>
-        Sponsor @jbrooksuk
-      </a>
-      <ThemePicker />
+    <div class="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shrink-0 px-3 py-3">
+      <div class="flex items-center justify-between gap-2">
+        <a
+          href="https://github.com/sponsors/ePlus-DEV"
+          title="Sponsor ePlus.DEV"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-artisan-accent bg-artisan-accent/10 ring-1 ring-inset ring-artisan-accent/20 hover:bg-artisan-accent/20 hover:ring-artisan-accent/40 dark:bg-artisan-accent/10 dark:hover:bg-artisan-accent/25 transition-colors duration-150"
+        >
+          <svg class="h-3 w-3 fill-current transition-transform duration-150 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s-7-4.35-9.5-9.35C1 8 3 4.5 6.5 4.5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3 3.5 0 5.5 3.5 4 7.15C19 16.65 12 21 12 21z" />
+          </svg>
+          Sponsor ePlus.DEV
+        </a>
+        <ThemePicker />
+      </div>
+      <p class="mt-1.5 text-center text-[9px] leading-3 text-gray-400 dark:text-gray-600">
+        Maintained by hoangsvit · Fork of artisan.page
+      </p>
     </div>
 
-    <!-- Back to top -->
     <button
       v-show="showBackToTop"
       class="fixed left-5 bottom-5 bg-gray-950 text-white text-center p-3 cursor-pointer rounded-md border dark:border-gray-700 z-20 text-sm md:hidden"
@@ -210,7 +202,6 @@ export default {
           scrollToAnchor(window.location.hash.replace('#', ''))
         })
 
-      // Set up intersection observer for active command tracking
       this.$nextTick(() => {
         this.setupScrollObserver()
       })
@@ -257,7 +248,7 @@ export default {
       const el = this.$refs.mainContent
       if (!el) return
       const scrollTotal = el.scrollHeight - el.clientHeight
-      this.showBackToTop = el.scrollTop / scrollTotal > 0.05
+      this.showBackToTop = scrollTotal > 0 && el.scrollTop / scrollTotal > 0.05
     },
     backToTop() {
       this.$refs.mainContent?.scroll({ top: 0, behavior: 'smooth' })
@@ -296,11 +287,6 @@ export default {
       commandEls.forEach((el) => {
         this._observer.observe(el)
       })
-    },
-    sponsorClick() {
-      if (typeof window.fathom !== 'undefined') {
-        window.fathom.trackGoal('L3DZXKHP', 0)
-      }
     },
   },
 }
