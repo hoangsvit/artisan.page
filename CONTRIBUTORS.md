@@ -1,20 +1,8 @@
-# Contributors
+# Maintainers
 
-Shout out to our top contributors!
+This fork is maintained by:
 
-- [jbrooksuk](https://api.github.com/users/jbrooksuk)
-- [dependabot[bot]](https://api.github.com/users/dependabot%5Bbot%5D)
-- [StyleCIBot](https://api.github.com/users/StyleCIBot)
-- [github-actions[bot]](https://api.github.com/users/github-actions%5Bbot%5D)
-- [ash-jc-allen](https://api.github.com/users/ash-jc-allen)
-- [KevinBatdorf](https://api.github.com/users/KevinBatdorf)
-- [MFlor](https://api.github.com/users/MFlor)
-- [driesvints](https://api.github.com/users/driesvints)
-- [gabbanaesteban](https://api.github.com/users/gabbanaesteban)
-- [naimsolong](https://api.github.com/users/naimsolong)
-- [clemblanco](https://api.github.com/users/clemblanco)
-- [daleweaver777](https://api.github.com/users/daleweaver777)
-- [naresh-io](https://api.github.com/users/naresh-io)
-- [ryangjchandler](https://api.github.com/users/ryangjchandler)
-- [ShaungBhone](https://api.github.com/users/ShaungBhone)
-- [izshreyansh](https://api.github.com/users/izshreyansh)
+- [hoangsvit](https://github.com/hoangsvit)
+- [ePlus.DEV](https://github.com/ePlus-DEV)
+
+For required upstream attribution, see [README.md](README.md) and [LICENSE.md](LICENSE.md).

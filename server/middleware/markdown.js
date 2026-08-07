@@ -50,9 +50,9 @@ function parsePath(pathname) {
 
 function renderHome() {
   const lines = []
-  lines.push('# Artisan.page')
+  lines.push('# artisan.eplus.dev')
   lines.push('')
-  lines.push('> The Laravel Artisan cheatsheet — browse every `php artisan` command from Laravel 5.x through 13.x.')
+  lines.push('> The Laravel Artisan cheatsheet maintained by hoangsvit — browse every `php artisan` command from Laravel 5.x through 13.x.')
   lines.push('')
   lines.push(`The latest supported version is **Laravel ${laravel[0]}**.`)
   lines.push('')
@@ -66,7 +66,8 @@ function renderHome() {
   lines.push('')
   lines.push('- Documentation for agents: https://artisan.eplus.dev/llms.txt')
   lines.push('- API catalog: https://artisan.eplus.dev/.well-known/api-catalog')
-  lines.push('- Source: https://github.com/jbrooksuk/artisan.page')
+  lines.push('- Source: https://github.com/hoangsvit/artisan.page')
+  lines.push('- Donate: https://github.com/sponsors/ePlus-DEV')
   return lines.join('\n')
 }
 

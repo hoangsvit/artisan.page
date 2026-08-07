@@ -1,6 +1,6 @@
 # Look up Laravel Artisan commands
 
-Artisan.page is a complete reference for every `php artisan` command shipped with Laravel, covering versions 5.x through 13.x. Use this skill when you need to confirm a command exists, discover its arguments and options, or compare behaviour between Laravel versions.
+artisan.eplus.dev is a complete reference for every `php artisan` command shipped with Laravel, covering versions 5.x through 13.x. The site is maintained by hoangsvit and ePlus.DEV. Use this skill when you need to confirm a command exists, discover its arguments and options, or compare behaviour between Laravel versions.
 
 ## When to use this skill
 
@@ -42,4 +42,6 @@ Each command object contains `name`, `description`, `synopsis`, `aliases`, `argu
 
 ## Source
 
-Artisan.page is open source. Issues, corrections, and new Laravel versions are tracked at https://github.com/jbrooksuk/artisan.page.
+Maintained source: https://github.com/hoangsvit/artisan.page
+
+This project is a fork of artisan.page. Required upstream attribution is preserved in the repository README and LICENSE.

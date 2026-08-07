@@ -19,7 +19,7 @@ const latestVersion = laravel[0]
 
 useSeoMeta({
   title: heading.value,
-  titleTemplate: '%s | artisan.page',
+  titleTemplate: '%s | artisan.eplus.dev',
   robots: 'noindex, follow',
   ogTitle: heading.value,
   ogDescription: message.value,

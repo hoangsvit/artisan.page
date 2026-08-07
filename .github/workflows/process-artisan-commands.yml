@@ -3,25 +3,18 @@ name: Process Artisan Commands
 on:
   push:
     branches:
-      - master
+      - netlify
   pull_request:
     branches:
-      - '!dependabot/**'
+      - netlify
   workflow_dispatch:
   schedule:
     - cron: '0 0,12,22 * * *'
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  # Allow installing framework versions flagged by security advisories. These
-  # are ephemeral, throwaway installs used only to generate the artisan command
-  # list, so the advisories are irrelevant. Using the env var (rather than an
-  # "audit"/"policy" config key) keeps this working across Composer versions,
-  # which have renamed the equivalent config setting over time.
   COMPOSER_NO_SECURITY_BLOCKING: '1'
 
-# Least-privilege default for the GITHUB_TOKEN. Jobs that need more (the
-# generate job commits build output) opt in explicitly below.
 permissions:
   contents: read
 
@@ -35,12 +28,6 @@ jobs:
       - name: Fetch from Packagist
         id: fetch_versions
         run: |
-          # Fetch the latest Laravel versions from Packagist
-          # Convert to JSON e.g {v: "8", php: ">=7.3.0"}
-          # Extract the versions and their PHP requirements
-          # Remove duplicate lines based on the first column
-          # Get major v only, dedupe, and combine on one line
-          # Output the JSON to the step output
           curl -s https://packagist.org/packages/laravel/laravel.json?$(date +%F%H%M) \
           | jq -r '.package.versions[] | select(.require.php != null) | select(.version_normalized != null) | .version_normalized, .require.php' \
           | sed -e '/dev/,+1d' -e '1~2 s/\..*//' -e '2~2 s/[^|]*|//' -e 's/[^0-9]*//' \
@@ -65,14 +52,12 @@ jobs:
               php: '8.0'
               v: 9
     permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
       contents: write
     steps:
       - name: Check out code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -131,7 +116,7 @@ jobs:
           cp /tmp/${{ matrix.laravel.v }}.x.json ${{ github.workspace }}/assets/
 
       - name: Sync Git Changes
-        run: git pull origin ${GITHUB_REF##*/} || true # can be run safely as only .x.json files are changed
+        run: git pull origin ${GITHUB_REF##*/} || true
 
       - name: Commit Laravel Version
         uses: EndBug/add-and-commit@v9

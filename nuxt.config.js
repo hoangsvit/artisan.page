@@ -53,14 +53,6 @@ export default defineNuxtConfig({
           href: 'https://fonts.bunny.net/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap',
         },
       ],
-      script: [
-        process.env.NODE_ENV === 'production' && {
-          src: 'https://cdn.usefathom.com/script.js',
-          'data-site': 'FMUFNTYW',
-          'data-canonical': false,
-          defer: 'defer',
-        },
-      ],
     },
   },
 
@@ -72,17 +64,11 @@ export default defineNuxtConfig({
     },
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/css/main.css'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    // '@nuxtjs/axios',
-    // '@nuxtjs/redirect-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
@@ -90,10 +76,8 @@ export default defineNuxtConfig({
     '@nuxtjs/web-vitals',
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   ignore: ['**/.claude/**'],
@@ -119,7 +103,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    cacheMaxAgeSeconds: 86400, // 24 hours
+    cacheMaxAgeSeconds: 86400,
     sources: [
       '/api/__sitemap__/urls'
     ]
