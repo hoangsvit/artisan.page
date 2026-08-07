@@ -106,10 +106,10 @@ export const SHARED_DEFS = `
     <path fill="#ef3931" d="M57,0,86,16.61,57.16,33.09Z" />
   </g>
 
-  <text x="114" y="80" font-family="DM Sans" font-size="24" fill="#ffffff" font-weight="700">Artisan.page</text>
-  <text x="114" y="100" font-family="DM Sans" font-size="13" fill="#6f6f6f">The Laravel Artisan Cheatsheet</text>
+  <text x="114" y="80" font-family="DM Sans" font-size="24" fill="#ffffff" font-weight="700">artisan.eplus.dev</text>
+  <text x="114" y="100" font-family="DM Sans" font-size="13" fill="#6f6f6f">The Laravel Artisan Cheatsheet by hoangsvit</text>
 
-  <text x="1110" y="580" font-family="DM Sans" font-size="14" fill="#444444" text-anchor="end">artisan.page</text>
+  <text x="1110" y="580" font-family="DM Sans" font-size="14" fill="#444444" text-anchor="end">hoangsvit · artisan.eplus.dev</text>
 `
 
 export function renderCommandSvg({ command, description, version }) {
