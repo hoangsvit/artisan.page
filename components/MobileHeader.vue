@@ -24,21 +24,18 @@ const showSearch = ref(false)
 
 <template>
   <header class="md:hidden sticky top-0 z-20 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-4 py-2.5 min-h-[50px]">
-    <!-- Left: Logo + command/version label -->
     <div class="flex items-center gap-4">
-      <!-- Full logo on listing pages -->
       <template v-if="!commandName">
         <NuxtLink href="/" class="flex items-center">
           <Logo class="h-7 w-auto dark:text-gray-200" />
-          <span class="sr-only">Artisan.page</span>
+          <span class="sr-only">artisan.eplus.dev</span>
         </NuxtLink>
       </template>
 
-      <!-- Icon + command dropdown on single command pages -->
       <template v-else>
         <NuxtLink href="/">
           <LogoIcon id="mobile-logo" class="h-[30px] w-auto" />
-          <span class="sr-only">Artisan.page</span>
+          <span class="sr-only">artisan.eplus.dev</span>
         </NuxtLink>
 
         <Menu as="div" class="relative">
@@ -69,7 +66,6 @@ const showSearch = ref(false)
       </template>
     </div>
 
-    <!-- Right: Search + Version picker -->
     <div class="flex items-center gap-3">
       <button
         @click="emit('search')"
