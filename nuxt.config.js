@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', ...prerenderRoutes],
+      routes: ['/', '/sitemap.xml', ...prerenderRoutes],
     },
   },
 
@@ -72,7 +72,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
     '@nuxtjs/web-vitals',
   ],
 
@@ -107,17 +106,6 @@ export default defineNuxtConfig({
     sources: [
       '/api/__sitemap__/urls'
     ]
-  },
-
-  robots: {
-    groups: [
-      {
-        userAgent: '*',
-        allow: ['/', '/og/'],
-        disallow: ['/api/'],
-      },
-    ],
-    sitemap: 'https://artisan.eplus.dev/sitemap.xml',
   },
 
   colorMode: {
