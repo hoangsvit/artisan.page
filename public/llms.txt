@@ -1,14 +1,14 @@
-# Artisan.page
+# artisan.eplus.dev
 
-> A searchable, bookmarkable cheatsheet for Laravel's Artisan CLI commands.
+> A searchable, bookmarkable cheatsheet for Laravel's Artisan CLI commands, maintained by hoangsvit and ePlus.DEV.
 
-Artisan.page provides a complete reference for every `php artisan` command available in Laravel, covering versions 5.x through 13.x. Each command page includes the command name, description, synopsis, arguments, and options.
+artisan.eplus.dev provides a complete reference for every `php artisan` command available in Laravel, covering versions 5.x through 13.x. Each command page includes the command name, description, synopsis, arguments, and options.
 
 ## URL Structure
 
-- Home: https://artisan.page
-- Version listing: https://artisan.page/{version}/ (e.g. https://artisan.page/13.x/)
-- Command detail: https://artisan.page/{version}/{command} (e.g. https://artisan.page/13.x/makemigration)
+- Home: https://artisan.eplus.dev
+- Version listing: https://artisan.eplus.dev/{version}/ (e.g. https://artisan.eplus.dev/13.x/)
+- Command detail: https://artisan.eplus.dev/{version}/{command} (e.g. https://artisan.eplus.dev/13.x/makemigration)
 
 Note: Colons in command names are stripped in URLs. For example, `make:migration` becomes `makemigration`.
 
@@ -32,8 +32,10 @@ Note: Colons in command names are stripped in URLs. For example, `make:migration
 
 ## Sitemap
 
-Full sitemap available at: https://artisan.page/sitemap.xml
+Full sitemap available at: https://artisan.eplus.dev/sitemap.xml
 
 ## Source
 
-Open source on GitHub: https://github.com/jbrooksuk/artisan.page
+Maintained by hoangsvit: https://github.com/hoangsvit/artisan.page
+
+This project is a fork of the original artisan.page project. See the repository README and LICENSE for required upstream attribution.

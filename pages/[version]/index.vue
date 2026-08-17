@@ -15,7 +15,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.eplus.dev${route.path}`,
     },
   ],
   script: [
@@ -29,13 +29,13 @@ useHead({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://artisan.page',
+            item: 'https://artisan.eplus.dev',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: `Laravel ${version}`,
-            item: `https://artisan.page/${version}`,
+            item: `https://artisan.eplus.dev/${version}`,
           },
         ],
       }),
@@ -52,28 +52,28 @@ useHead({
           '@type': 'ListItem',
           position: index + 1,
           name: `php artisan ${cmd.name}`,
-          url: `https://artisan.page/${version}/${cmd.name.replace(':', '')}`,
+          url: `https://artisan.eplus.dev/${version}/${cmd.name.replace(':', '')}`,
         })),
       }),
     },
   ],
 })
 
-const ogImageUrl = `https://artisan.page/og/${version}.png`
+const ogImageUrl = `https://artisan.eplus.dev/og/${version}.png`
 
 useSeoMeta({
   title: version,
   titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
 
-  description: `The Laravel ${version} Artisan cheatsheet — browse and search ${allCommands.length} php artisan commands.`,
-  ogTitle: `Laravel ${version} Artisan Cheatsheet - artisan.page`,
-  ogDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version}.`,
+  description: `The Laravel ${version} Artisan cheatsheet maintained by hoangsvit — browse and search ${allCommands.length} php artisan commands.`,
+  ogTitle: `Laravel ${version} Artisan Cheatsheet - artisan.eplus.dev`,
+  ogDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version} on artisan.eplus.dev.`,
   ogImage: ogImageUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogUrl: `https://artisan.page/${version}`,
-  twitterTitle: `Laravel ${version} Artisan Cheatsheet - artisan.page`,
-  twitterDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version}.`,
+  ogUrl: `https://artisan.eplus.dev/${version}`,
+  twitterTitle: `Laravel ${version} Artisan Cheatsheet - artisan.eplus.dev`,
+  twitterDescription: `Browse ${allCommands.length} php artisan commands for Laravel ${version} on artisan.eplus.dev.`,
   twitterImage: ogImageUrl,
 })
 </script>

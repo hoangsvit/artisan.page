@@ -38,10 +38,10 @@ Each command object includes:
 
 ## URL Patterns
 
-- Version index: `https://artisan.page/{version}/`
-- Command detail: `https://artisan.page/{version}/{command}`
+- Version index: `https://artisan.eplus.dev/{version}/`
+- Command detail: `https://artisan.eplus.dev/{version}/{command}`
 - Colons are stripped from command names in URLs: `make:model` → `makemodel`
 
 ## Sitemap
 
-Full URL listing: `https://artisan.page/sitemap.xml`
+Full URL listing: `https://artisan.eplus.dev/sitemap.xml`

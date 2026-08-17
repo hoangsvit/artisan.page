@@ -14,8 +14,10 @@ describe('markdown middleware', () => {
   it('serves the home page as markdown when the client prefers it', async () => {
     const { event, response } = request('/')
     const body = await response
-    expect(body).toMatch(/^# Artisan\.page/)
-    expect(body).toContain(`[Laravel ${latest}](https://artisan.page/${latest})`)
+    expect(body).toMatch(/^# artisan\.eplus\.dev/)
+    expect(body).toContain(`[Laravel ${latest}](https://artisan.eplus.dev/${latest})`)
+    expect(body).toContain('https://github.com/hoangsvit/artisan.page')
+    expect(body).toContain('https://github.com/sponsors/ePlus-DEV')
     expect(event.responseHeaders['Content-Type']).toBe('text/markdown; charset=utf-8')
     expect(event.responseHeaders['Vary']).toBe('Accept')
     expect(Number(event.responseHeaders['x-markdown-tokens'])).toBeGreaterThan(0)
@@ -46,7 +48,6 @@ describe('markdown middleware', () => {
   it('honours Accept q-values', async () => {
     expect(await request('/', 'text/html;q=1,text/markdown;q=0.5').response).toBeUndefined()
     expect(await request('/', 'text/markdown;q=0.9,text/html;q=0.8').response).toBeDefined()
-    // Equal weight goes to markdown.
     expect(await request('/', 'text/markdown,text/html').response).toBeDefined()
   })
 
