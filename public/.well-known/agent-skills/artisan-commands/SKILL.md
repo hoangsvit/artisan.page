@@ -13,15 +13,17 @@ artisan.eplus.dev is a complete reference for every `php artisan` command shippe
 - Home: `https://artisan.eplus.dev`
 - Version listing: `https://artisan.eplus.dev/{version}` (e.g. `https://artisan.eplus.dev/13.x`)
 - Command detail: `https://artisan.eplus.dev/{version}/{command}` (e.g. `https://artisan.eplus.dev/13.x/makemigration`)
+- Markdown version index: `https://artisan.eplus.dev/{version}.md` (e.g. `https://artisan.eplus.dev/13.x.md`)
+- Markdown command detail: `https://artisan.eplus.dev/{version}/{command}.md` (e.g. `https://artisan.eplus.dev/13.x/makemigration.md`)
 
 Colons in command names are stripped from the URL path: `make:migration` becomes `makemigration`, `cache:clear` becomes `cacheclear`.
 
 ## Fetching content as an agent
 
-All HTML pages support content negotiation. Send `Accept: text/markdown` and the response body will be a clean markdown representation of the page, with `Content-Type: text/markdown; charset=utf-8` and an `x-markdown-tokens` header estimating the markdown token count. Without that header the default response is HTML.
+Use a `.md` URL for a Markdown response without content negotiation. Canonical HTML pages also support `Accept: text/markdown`; those responses include `Content-Type: text/markdown; charset=utf-8` and an `x-markdown-tokens` header estimating the Markdown token count. Without the extension or header, the default response is HTML.
 
 ```bash
-curl -H "Accept: text/markdown" https://artisan.eplus.dev/13.x/makemigration
+curl https://artisan.eplus.dev/13.x/makemigration.md
 ```
 
 ## JSON API
@@ -42,6 +44,4 @@ Each command object contains `name`, `description`, `synopsis`, `aliases`, `argu
 
 ## Source
 
-Maintained source: https://github.com/hoangsvit/artisan.page
-
-This project is a fork of artisan.page. Required upstream attribution is preserved in the repository README and LICENSE.
+Maintained source: https://github.com/hoangsvit/artisan.page\n\nThis project is a fork of artisan.page. Required upstream attribution is preserved in the repository README and LICENSE.
